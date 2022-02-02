@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <style>
+		body{background-image: url(images/r3.gif);
+            background-size: cover;
+            background-repeat:no-repeat;}
+		.box{width:100%;margin:0 auto;}
+        .box1{
+            position: fixed;
+            width: 200px;
+            height: 300px;
+            right: 15px;
+            top: 50px;
+            color:cornflowerblue;
+        }
+        .box1>ul{
+            width: 120px;
+            margin: 10px;
+        }
+        .box1 ul{
+            width: 150px;
+            background-color:rgba(red, green, blue, .3);
+            text-align: center;
+        }
+        .box1 ul li ul li{
+            width: 150px;
+         
+            text-align: center;
+            float:left;
+            margin-left: -40px;
+        }
+        .box1 ul li ul li a{
+            display: inline-block;
+            width: 150px;
+        }
+		h1{color:aqua;text-align: center;}
+		.xx{ list-style:none;}
+       .xx li{ line-height:40px; text-align:center; position:relative;float:left;} 
+       a{ text-decoration:none; color:#076C92; display:block; width:90px;}
+       a:hover{ color:#FFF; background-color:#5A4F4F;}
+       li{list-style:none;}
+       .xx li ul{display:none;width:90px;position:absolute;
+        left: 0px;top:40px;opacity:0.2;overflow: hidden;}
+          .xx li ul li{background-color:#eee;width: 90px;margin-left:-40px;list-style: none;} 
+       .xx li:hover ul{display:block;}
+	.banner {
+            width: 500px;
+            height: 300px;
+            margin: 100px 400px 50px 20px;
+            border: 1px solid #808080;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .banner .img {
+            padding: 0px;
+            margin: 0px;
+            width: 5000px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+        
+        .banner .img img {
+            padding: 0px;
+            margin: 0px;
+            width: 500px;
+            height: 300px;
+        }
+        
+        .banner .img li {
+            float: left;
+        }
+        
+        .banner .num {
+            position: absolute;
+            width: 100%;
+            bottom: 10px;
+            left: 0px;
+            text-align: center;
+            font-size: 0px;
+        }
+        
+        .banner .num li {
+            width: 10px;
+            height: 10px;
+            background-color: #888;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0px 3px;
+            cursor: pointer;
+        }
+        
+        .banner .num li.on {
+            background-color: #ff6a00;
+        }
+        
+        .banner .btn_l {
+            left: 0px;
+        }
+        
+        .banner .btn_r {
+            right: 0px;
+        }
+        
+        .banner:hover .btn {
+            display: block;
+        }
+	</style>
+    <script src='js/jquery.min.js'></script>
+</head>
+
+<body>
+<div class="box">
+	<ul class="xx">
+	 <li><a href="公示中心.php">公告中心</a></li>
+  <li><a href="个人中心.php">个人中心</a></li>
+  <li><a href='javascript:;'>关于我的</a>
+    <ul>
+        <li><a href="我的项目.php">我的项目</a></li>
+        <li><a href="上传项目.html">上传项目</a></li>
+    </ul>
+  </li>
+</ul>
+<div class="box1">
+    <ul>
+        <li>我的成绩<ul>
+        <li><a href="cji.php">查看成绩</a></li>
+    </ul></li>
+        <li>关于学籍<ul>
+        <li><a href="xueji.html">学籍说明</a></li>
+    </ul></li>
+        <li>微博<ul>
+        <li>关于我们</li>
+        <li>关于我们</li>
+        <li>关于我们</li>
+    </ul></li>
+    </ul>
+</div>
+
+
+	<h1>学生创新项目管理系统</h1>
+		<div class="banner">
+        <ul class="img">
+            <li><img src="images/01.jpg"/></li>
+            <li><img src="images/02.jpeg"/></li>
+            <li><img src="images/03.jpeg"/></li>
+            <li><img src="images/04.jpg" /></li>
+            <li><img src="images/05.jpg"/></li>
+        </ul>
+        <ul class="num">
+
+        </ul>
+       
+    </div>
+    </div>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var i = 0;
+            var clone = $(".banner .img li").first().clone(); 
+            $(".banner .img").append(clone); 
+            var size = $(".banner .img li").size();
+            for (var j = 0; j < size - 1; j++) {
+                $(".banner .num").append("<li></li>");
+            }
+            $(".banner .num li").first().addClass("on");
+            var t = setInterval(function() {
+                i++;
+                move();
+            }, 2000);
+            $(".banner").hover(function() {
+                clearInterval(t); 
+            }, function() {
+                t = setInterval(function() {
+                    i++;
+                    move();
+                }, 2000); 
+            });
+            $(".banner .num li").hover(function() {
+
+                var index = $(this).index(); 
+                i = index;
+                $(".banner .img").stop().animate({
+                    left: -index * 500
+                }, 500);
+                $(this).addClass("on").siblings().removeClass("on");
+            });
+            function move() {
+                if (i == size) {
+                    $(".banner .img").css({
+                        left: 0
+                    });
+                    i = 1;
+                }
+                if (i == -1) {
+                    $(".banner .img").css({
+                        left: -(size - 1) * 500
+                    });
+                    i = size - 2;
+                }
+                $(".banner .img").stop().animate({
+                    left: -i * 500
+                }, 500);
+
+                if (i == size - 1) {
+                    $(".banner .num li").eq(0).addClass("on").siblings().removeClass("on");
+                } else {
+                    $(".banner .num li").eq(i).addClass("on").siblings().removeClass("on");
+                }
+            }
+            $('.box1>ul>li ul').hide();
+            $('.box1>ul>li').hover(function(){
+                $(this).children('ul').stop().slideToggle(500);
+            })
+        });
+    </script>
+    
+</body>
+</html>

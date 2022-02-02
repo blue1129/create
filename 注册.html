@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>用户注册页面</title>
+        <style>
+            body{text-align: center;vertical-align: center;color:lightyellow;background-image: url(images/05.jpg);}
+               form{text-align: center;vertical-align: center;top:100px;}
+               span{
+                   display: inline-block;
+                   width: 55px;
+                   margin-right: 15px;
+               }
+    </style>
+    </head>
+    <body>
+        <div class="box">
+            <h1>Register</h1>
+        <form action="signup.php" method="post">
+            <p><span>用户名:           </span><input type="text" name="name"></p>
+            <p><span>密&nbsp;&nbsp;码: </span><input type="text" name="password"></p>
+            <p><span>姓&nbsp;&nbsp;名: </span><input type="text" name="ssname"></p>
+            <p><span>性&nbsp;&nbsp;别: </span><input type="text" name="ssex"></p>
+            <p><span>学&nbsp;&nbsp;院: </span><input type="text" name="saca"></p>
+            <p><span>专&nbsp;&nbsp;业: </span><input type="text" name="sma"></p>
+            <p><span>班&nbsp;&nbsp;级: </span><input type="text" name="sclass"></p>
+
+            <p><input type="submit" name="submit" value="注 册"></p>
+        </form>
+    </div>
+    </body>
+</html>

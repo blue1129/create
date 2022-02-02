@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>登陆</title>
+        <style>
+           body{background-image: url(images/09.jpeg);
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat:no-repeat;
+            text-align: center;
+        color:lightyellow;}
+           .box{position:fixed;top:120px;left:400px;margin: 0 auto;}
+       .box1{text-align: center;vertical-align: center;}
+       
+        input{
+            margin-left: 15px;
+        }
+        a{
+            color: navajowhite;
+        }
+        .btn2{
+            margin-left: 45px;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="box">
+            <h1>login</h1>
+            <div class="box1">
+        <form name="login" action="login.php" method="post">
+                <p>用户名<input type=text name="name"></p>
+                <p><span style="margin-right:15px">密</span><span>码</span><input type=password name="password"></p>
+                <p>
+                    <input type="submit" name="submit" value="登 录" class='btn1'>
+                    <input type="button" name="zhuce" value="注 册" onclick="window.location.href='注册.html'" class='btn2'>
+                </p>
+                <!-- <a href="注册.html">还没有账号，注册一个</a><br> -->
+                
+                <a href="管理员登录.html">管理员登录</a>
+            </form>
+        </div>
+       
+        </div>
+    </body>
+</html>
