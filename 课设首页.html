@@ -4,10 +4,11 @@
 <meta charset="utf-8">
 <title>无标题文档</title>
     <style>
-		body{background-image: url(images/r3.gif);
-            background-size: cover;
-            background-repeat:no-repeat;}
-		.box{width:100%;margin:0 auto;}
+	body{
+		background-image: url(images/r3.gif);
+        	background-size: cover;
+        	background-repeat:no-repeat;}
+	.box{width:100%;margin:0 auto;}
         .box1{
             position: fixed;
             width: 200px;
@@ -27,7 +28,6 @@
         }
         .box1 ul li ul li{
             width: 150px;
-         
             text-align: center;
             float:left;
             margin-left: -40px;
@@ -36,16 +36,15 @@
             display: inline-block;
             width: 150px;
         }
-		h1{color:aqua;text-align: center;}
-		.xx{ list-style:none;}
-       .xx li{ line-height:40px; text-align:center; position:relative;float:left;} 
-       a{ text-decoration:none; color:#076C92; display:block; width:90px;}
-       a:hover{ color:#FFF; background-color:#5A4F4F;}
-       li{list-style:none;}
-       .xx li ul{display:none;width:90px;position:absolute;
-        left: 0px;top:40px;opacity:0.2;overflow: hidden;}
-          .xx li ul li{background-color:#eee;width: 90px;margin-left:-40px;list-style: none;} 
-       .xx li:hover ul{display:block;}
+	h1{color:aqua;text-align: center;}
+	.xx{ list-style:none;}
+        .xx li{ line-height:40px; text-align:center; position:relative;float:left;} 
+        a{ text-decoration:none; color:#076C92; display:block; width:90px;}
+        a:hover{ color:#FFF; background-color:#5A4F4F;}
+        li{list-style:none;}
+        .xx li ul{display:none;width:90px;position:absolute;left: 0px;top:40px;opacity:0.2;overflow: hidden;}
+        .xx li ul li{background-color:#eee;width: 90px;margin-left:-40px;list-style: none;} 
+        .xx li:hover ul{display:block;}
 	.banner {
             width: 500px;
             height: 300px;
@@ -54,27 +53,23 @@
             position: relative;
             overflow: hidden;
         }
-        
         .banner .img {
             padding: 0px;
-            margin: 0px;
+            magin: 0px;
             width: 5000px;
             position: absolute;
             left: 0px;
             top: 0px;
         }
-        
         .banner .img img {
             padding: 0px;
             margin: 0px;
             width: 500px;
             height: 300px;
-        }
-        
+        }   
         .banner .img li {
             float: left;
         }
-        
         .banner .num {
             position: absolute;
             width: 100%;
@@ -82,8 +77,7 @@
             left: 0px;
             text-align: center;
             font-size: 0px;
-        }
-        
+        } 
         .banner .num li {
             width: 10px;
             height: 10px;
@@ -93,19 +87,15 @@
             margin: 0px 3px;
             cursor: pointer;
         }
-        
         .banner .num li.on {
             background-color: #ff6a00;
         }
-        
         .banner .btn_l {
             left: 0px;
         }
-        
         .banner .btn_r {
             right: 0px;
-        }
-        
+        } 
         .banner:hover .btn {
             display: block;
         }
@@ -141,6 +131,7 @@
 
 	<h1>学生创新项目管理系统</h1>
 		<div class="banner">
+
         <ul class="img">
             <li><img src="images/01.jpg"/></li>
             <li><img src="images/02.jpeg"/></li>
@@ -209,6 +200,9 @@
                     $(".banner .num li").eq(i).addClass("on").siblings().removeClass("on");
                 }
             }
+		
+		
+		
             $('.box1>ul>li ul').hide();
             $('.box1>ul>li').hover(function(){
                 $(this).children('ul').stop().slideToggle(500);
